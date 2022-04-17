@@ -11,8 +11,6 @@ and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins an
 
 What you need (assume you are on MacOS):
 
-NOTE: As of 2022-04-15, the PHP 8.1 does not work with WordPress yet, so you would need to use 8.0 instead.
-
 * You would need to install MySQL database with `brew install mysql`.
 * You would need to install PHP 8.0 with `brew install php@8.0`.
 * You need to install `WP-CLI` tool with `brew install wp-cli`.
