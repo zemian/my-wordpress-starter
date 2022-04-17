@@ -67,6 +67,7 @@ open http://localhost:8080/wordpress/wp-admin/
 
 Just start creating plugins or themes under `<my-wordpress-starter>/my-wp-content` folder!
 
+See [WordPress Developer Guide](https://developer.wordpress.org/) for more.
 ## How to run WP Updates
 
 ```
