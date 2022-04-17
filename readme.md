@@ -6,7 +6,6 @@ Instead of writing directly into `wordpress` application folder, we let WP loads
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
 and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins and themes files instead.
 
-See [docs/wordpress.md](docs/wordpress.md) for more!
 
 ## First Time Setup
 
