@@ -68,6 +68,10 @@ wp server
 open http://localhost:8080/wordpress/wp-admin/
 ```
 
+NOTE: Since we set web server documentRoot folder same as this project root directory, thus we need
+to access WP with `/wordpress` path. However we do added a `<project-root>/index.php` can also bootstrap
+WP nicely as well. Meaning you should able to get to WP by http://localhost:8080/ as well.
+
 ## How to start WP development
 
 Just start creating plugins or themes under `<my-wordpress-starter>/my-wp-content` folder!
