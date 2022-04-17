@@ -21,8 +21,8 @@ What you need (assume you are on MacOS):
 ```
 bash> mysql -u root
 
-sql> CREATE USER IF NOT EXISTS 'zemian'@'localhost' IDENTIFIED BY 'test123';
-sql> GRANT ALL PRIVILEGES ON *.* TO 'zemian'@'localhost';
+sql> CREATE USER IF NOT EXISTS 'mydbuser'@'localhost' IDENTIFIED BY 'test123';
+sql> GRANT ALL PRIVILEGES ON *.* TO 'mydbuser'@'localhost';
 ```
 
 2. Download WordPress (WP) application:
