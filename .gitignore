@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+temp/
+/wordpress/
+
+# Ignore WP config file
+wp-config.php
+/my-wp-content/uploads/
