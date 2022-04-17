@@ -7,3 +7,4 @@ temp/
 wp-config.php
 /my-wp-content/debug.log
 /my-wp-content/uploads/
+.htaccess
