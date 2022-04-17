@@ -5,4 +5,5 @@ temp/
 
 # Ignore WP config file
 wp-config.php
+/my-wp-content/debug.log
 /my-wp-content/uploads/
