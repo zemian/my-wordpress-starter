@@ -25,6 +25,9 @@ sql> CREATE USER IF NOT EXISTS 'mydbuser'@'localhost' IDENTIFIED BY 'test123';
 sql> GRANT ALL PRIVILEGES ON *.* TO 'mydbuser'@'localhost';
 ```
 
+NOTE: I have setup this DB user to have access to any database locally. If you want to restrict only to
+WordPress db, then change `*.*` to `mywordpress.*` instead. The DB name is set inside the `wp-config-local.php` file.
+
 2. Download WordPress (WP) application:
 
 ```
