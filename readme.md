@@ -38,7 +38,7 @@ wp core download
 This will download and create the `wordpress` folder. This is the WP application, and we will not 
 add this into our Git repository. We will setup local dev web server document root at the project root, and set the `wordpress` as sub folder. (See `wp-cli.yml` configuration).
 
-3. Copy `<my-wordpress-starter>/wp-config-local.php` to `<my-wordpress-starter>/wp-config.php` and change the default if needed.
+3. Copy `<my-wordpress-starter>/wp-config-local.php` to `<my-wordpress-starter>/wp-config.php` and change the default if needed. (We recommend you to change the salt keys for each new environment!)
 
 NOTE: This file is under `<my-wordpress-starter>` project directory (not inside `wordpress`). We do not 
 want to touch the original `wordpress` if possible. The WP will automatically detect the `wp-config.php`
@@ -56,7 +56,9 @@ wp core install --url=http://localhost:8080/wordpress --title=MyWP \
   --admin_user=admin --admin_email=admin@localhost.local --admin_password=test123
 ```
 
-To re-create a clean site, run `wp db clean` and then `wp db install` again.
+NOTE: To re-run the installation, run `wp db clean` first and then `wp db install` again.
+
+NOTE: To remove all the sample pages from the site after install, run `wp site empty`. 
 
 6. Run local WP web server
 
