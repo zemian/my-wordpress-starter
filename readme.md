@@ -33,8 +33,7 @@ wp core download
 ```
 
 This will download and create the `wordpress` folder. This is the WP application, and we will not 
-add this into our Git repository. We will setup local dev using this folder as the web server document
-root. (See `wp-cli.yml` configuration).
+add this into our Git repository. We will setup local dev web server document root at the project root, and set the `wordpress` as sub folder. (See `wp-cli.yml` configuration).
 
 3. Copy `<my-wordpress-starter>/wp-config-local.php` to `<my-wordpress-starter>/wp-config.php` and change the default if needed.
 
