@@ -72,15 +72,20 @@ NOTE: Since we set web server documentRoot folder same as this project root dire
 to access WP with `/wordpress` path. However we do added a `<project-root>/index.php` can also bootstrap
 WP nicely as well. Meaning you should able to get to WP by http://localhost:8080/ as well.
 
-## How to start WP development
+## How to start WP development?
 
 Just start creating plugins or themes under `<my-wordpress-starter>/my-wp-content` folder!
 
 See [WordPress Developer Guide](https://developer.wordpress.org/) for more.
-## How to run WP Updates
+
+## How to run WP Updates?
 
 ```
-wp core version
-wp core check-update
 wp core update
 ```
+
+You can also use `check-update` or `version` to verify your installations.
+
+## How to remove default themes?
+
+We have used a must-use plugin `my-wp-content/mu-plugins/register-theme-directory.php` to load all the default themes inside of `wordpress/wp-content/themes` directory. If you do not want these to be listed under Themes menu inside Admin, then remove this plugin.
