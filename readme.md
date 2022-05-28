@@ -1,11 +1,26 @@
 ## About This Project
 
-My streamlined WordPress (WP) Setup for local dev.
+My streamlined WordPress (WP) Setup for local development.
 
 Instead of writing directly into `wordpress` application folder, we let WP loads the 
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
 and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins and themes files instead.
 
+### Why we need this?
+
+The WordPress was designed to deploy itself under a web server DocumentRoot, and all the plugins and themes
+under the `wordpress/wp-content` folder. This makes local development difficult to source control and separate
+your own plugin work from the core WordPress file. This is specially true when you have to run WordPress core
+upgrade. The files updated by core are all mixed with your own plugin/theme development file.
+
+### How is it done?
+
+So to solve this problem, we setup a separate `my-wp-content` folder outside of WordPress. The trick is to tell
+WordPress how to load and bootstrap itself with that and mange the `wp-config.php`. The `wp-config.php` file
+is never part of WordPress core, and it's always user generated. It turns out that WordPress will automatically
+look for this `wp-config.php` outside of itself from a parent directory! So this works well when we setup our
+project as parent directory, and simply add `wordpress` core files under. In our custom `wp-config.php` we simply
+change the location of `WP_CONTENT_DIR` value.
 
 ## First Time Setup
 
@@ -38,11 +53,11 @@ wp core download
 This will download and create the `wordpress` folder. This is the WP application, and we will not 
 add this into our Git repository. We will setup local dev web server document root at the project root, and set the `wordpress` as sub folder. (See `wp-cli.yml` configuration).
 
-3. Copy `<my-wordpress-starter>/wp-config-local.php` to `<my-wordpress-starter>/wp-config.php` and change the default if needed. (We recommend you to change the salt keys for each new environment!)
+3. Copy `<my-wordpress-starter>/wp-config-local.php` to `<my-wordpress-starter>/wp-config.php` and change the default if needed. (We recommend you to change the salt keys for each new environment as well!)
 
-NOTE: This file is under `<my-wordpress-starter>` project directory (not inside `wordpress`). We do not 
-want to touch the original `wordpress` if possible. The WP will automatically detect the `wp-config.php`
-file from parent directory and uses it. With this custom WP config, we have stream-lined the 
+NOTE: This `wp-config.php` file should be copied into `<my-wordpress-starter>` project directory 
+(not inside `wordpress`). We do not  want to touch the original `wordpress` core files. The WP will automatically 
+detect the `wp-config.php` file from parent directory and uses it. With this custom WP config, we have stream-lined the 
 structure of WP. Instead of writing directly into `wordpress` application folder, we let WP loads the
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
 and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins and themes files instead.
