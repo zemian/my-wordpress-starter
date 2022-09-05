@@ -2,6 +2,8 @@
 
 A quick setup for WordPress development.
 
+This project setup is based on [my-wordpress-starter](https://github.com/zemian/my-wordpress-starter/).
+
 ## Quick start
 
 ```
