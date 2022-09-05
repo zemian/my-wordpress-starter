@@ -16,7 +16,7 @@ cp wp-config-local.php wp-config.php
 
 wp core download
 wp db create
-wp install
+wp core install
 wp server
 open http://localhost:8080/wordpress/wp-admin/
 ```
