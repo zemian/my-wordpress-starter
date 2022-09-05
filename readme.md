@@ -5,6 +5,7 @@ A quick setup for WordPress development.
 ## Quick start
 
 ```
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 alias wp='php wp-cli.phar'
 
 cd my-wordpress-starter
