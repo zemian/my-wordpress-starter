@@ -2,6 +2,7 @@
 .idea/
 temp/
 /wordpress/
+wp-cli.phar
 
 # Ignore WP config file
 wp-config.php
