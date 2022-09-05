@@ -129,3 +129,13 @@ NOTE: The `wp core update` command will up auto update Themes! You have to run `
 ## How to remove default themes?
 
 We have used a must-use plugin `my-wp-content/mu-plugins/register-theme-directory.php` to load all the default themes inside of `wordpress/wp-content/themes` directory. If you do not want these to be listed under Themes menu inside Admin, then remove this plugin.
+
+## How is this compare to Bedrocks?
+
+This project template is inspired by [Bedrock](https://roots.io/bedrock/), and in fact, we re-use
+one of theri mu-plugins named "register-theme-directory.php". However, we kept it very minimal, 
+and we do not use/depends on "composer" to get dependencies. We simply take advantage of the
+"wp-cli" command line tool. This allows us to stay close to WordPress structure as much as 
+possible, and yet still having the advantage of separation of "wp-content" away from deployed 
+"wordpress" directory. We believe this is a good balance and bring efficient and quick way to 
+setup and start WordPress development.
