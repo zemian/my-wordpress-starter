@@ -11,6 +11,9 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 alias wp='php wp-cli.phar'
 
 cd my-wordpress-starter
+cp wp-config-local.php wp-config.php
+# Edit DB connection config
+
 wp core download
 wp db create
 wp install
