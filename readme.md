@@ -12,7 +12,7 @@ alias wp='php wp-cli.phar'
 
 cd my-wordpress-starter
 cp wp-config-local.php wp-config.php
-# Edit DB connection config
+# Edit DB connection config in wp-config.php
 
 wp core download
 wp db create
