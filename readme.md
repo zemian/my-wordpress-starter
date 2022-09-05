@@ -23,7 +23,8 @@ open http://localhost:8080/wordpress/wp-admin/
 
 ## About `my-wordpress-starter` Project
 
-My streamlined WordPress (WP) Setup for local development.
+This project starter template provides a streamlined WordPress (WP) structure setup for local
+development.
 
 Instead of writing directly into `wordpress` application folder, we let WP loads the 
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
