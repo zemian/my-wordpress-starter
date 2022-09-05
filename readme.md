@@ -1,4 +1,21 @@
-## About This Project
+# my-wordpress-starter
+
+A quick setup for WordPress development.
+
+## Quick start
+
+```
+alias wp='php wp-cli.phar'
+
+cd my-wordpress-starter
+wp core download
+wp db create
+wp install
+wp server
+open http://localhost:8080/wordpress/wp-admin/
+```
+
+## About `my-wordpress-starter` Project
 
 My streamlined WordPress (WP) Setup for local development.
 
