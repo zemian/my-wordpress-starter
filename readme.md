@@ -1,8 +1,6 @@
-# my-wordpress-starter
+# About This Project
 
 A quick setup for WordPress development.
-
-This project setup is based on [my-wordpress-starter](https://github.com/zemian/my-wordpress-starter/).
 
 ## Quick start
 
@@ -10,7 +8,7 @@ This project setup is based on [my-wordpress-starter](https://github.com/zemian/
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 alias wp='php wp-cli.phar'
 
-cd my-wordpress-starter
+cd <project-repo>
 cp wp-config-local.php wp-config.php
 # Edit DB connection config in wp-config.php
 
@@ -21,7 +19,9 @@ wp server
 open http://localhost:8080/wordpress/wp-admin/
 ```
 
-## About `my-wordpress-starter` Project
+## About The Starter Template
+
+This project setup is based on [my-wordpress-starter](https://github.com/zemian/my-wordpress-starter/).
 
 This project starter template provides a streamlined WordPress (WP) structure setup for local
 development.
