@@ -1,6 +1,7 @@
 # About This Project
 
-A quick setup for WordPress development.
+A quick setup for WordPress development with "my-theme". This theme is setup 
+to use minimal structure, and it's ready with BulmaCSS and VueJS loaded from CDN ready.
 
 ## Quick start
 
