@@ -32,6 +32,10 @@ function init_plugin() {
 
     // Note that name space is required with WP callback function
     add_action('wp_enqueue_scripts', 'MyTheme\add_resources');
+
+	// Add main-menu
+	require_once 'main-menu.php';
+	MainMenu\setup();
 }
 
 // Main script entry

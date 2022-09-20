@@ -9,4 +9,35 @@
 
     <?php wp_head(); ?>
 </head>
+
+<header class="navbar">
+    <div class="navbar-brand">
+        <div class="navbar-item">
+            <h1 class="title"><?php bloginfo('name'); ?></h1>
+        </div>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMainMenu"
+           :class="{'is-active': isNavbarBurgerActive}" @click="isNavbarBurgerActive = !isNavbarBurgerActive">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu" id="navbarMainMenu" :class="{'is-active': isNavbarBurgerActive}">
+        <div class="navbar-end">
+			<?php \MyTheme\MainMenu\render_nav_menu_items(); ?>
+        </div>
+    </div>
+</header>
+<script>
+    // JS Code to support Navbar menu expansion in mobile mode
+    Vue.createApp({
+        data: function () {
+            return {
+                isNavbarBurgerActive: false
+            }
+        }
+    }).mount('header.navbar');
+</script>
+
 <body>
