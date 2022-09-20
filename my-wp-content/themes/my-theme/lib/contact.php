@@ -17,8 +17,22 @@ function process_form($form_data): array
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (validate_form($form) === 0) {
             // Process form data here.
-            $form['message'] = ['text' => "Thank you for using our contact form!", 'type' => 'is-success'];
-            $form['data'] = []; // Clear form fill after process.
+	        $site_name = get_bloginfo("name");
+	        $admin_email = get_option('admin_email');
+	        $subject = "Contact Us Submission from $site_name";
+	        $message = $form['data']['mt_message'];
+	        $from_name = $form['data']['mt_name'];
+	        $from_email = $form['data']['mt_email'];
+	        $headers = 'From: "' . $from_name . '" <' . $from_email . '>';
+	        if (wp_mail($admin_email, $subject, $message, $headers)) {
+		        $form['message'] = ['text' => "Thank you for using our contact form!", 'type' => 'is-success'];
+		        $form['data'] = []; // Clear form fill after process.
+	        } else {
+		        $form['message'] = [
+					'text' => "Sorry, we are unable to send your message at this time. Please retry later.",
+					'type' => 'is-danger'
+		        ];
+	        }
         }
     }
     return $form;
