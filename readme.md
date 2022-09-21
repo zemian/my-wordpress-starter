@@ -132,7 +132,7 @@ wp core update
 
 You can also use `check-update` or `version` to verify your installations.
 
-NOTE: The `wp core update` command will up auto update Themes! You have to run `wp theme update --all` separately.
+NOTE: The `wp core update` command will not auto update Themes! You have to run `wp theme update --all` separately.
 
 ## How to Remove Default Themes?
 
