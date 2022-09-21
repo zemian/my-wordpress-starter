@@ -2,7 +2,7 @@
 
 A quick setup for WordPress development.
 
-## Quick start
+## Quick Start
 
 ```
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -30,14 +30,14 @@ Instead of writing directly into `wordpress` application folder, we let WP loads
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
 and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins and themes files instead.
 
-### Why we need this?
+### Why We Need This?
 
 The WordPress was designed to deploy itself under a web server DocumentRoot, and all the plugins and themes
 under the `wordpress/wp-content` folder. This makes local development difficult to source control and separate
 your own plugin work from the core WordPress file. This is specially true when you have to run WordPress core
 upgrade. The files updated by core are all mixed with your own plugin/theme development file.
 
-### How is it done?
+### How Does It Work?
 
 So to solve this problem, we setup a separate `my-wp-content` folder outside of WordPress. The trick is to tell
 WordPress how to load and bootstrap itself with that and mange the `wp-config.php`. The `wp-config.php` file
@@ -111,13 +111,13 @@ NOTE: Since we set web server documentRoot folder same as this project root dire
 to access WP with `/wordpress` path. However we do added a `<project-root>/index.php` can also bootstrap
 WP nicely as well. Meaning you should able to get to WP by http://localhost:8080/ as well.
 
-## How to start WP development?
+## How to Start WP Development?
 
 Just start creating plugins or themes under `<my-wordpress-starter>/my-wp-content` folder!
 
 See [WordPress Developer Guide](https://developer.wordpress.org/) for more.
 
-## How to run WP Updates?
+## How to Run WP Updates?
 
 ```
 wp core update
@@ -127,11 +127,11 @@ You can also use `check-update` or `version` to verify your installations.
 
 NOTE: The `wp core update` command will up auto update Themes! You have to run `wp theme update --all` separately.
 
-## How to remove default themes?
+## How to Remove Default Themes?
 
 We have used a must-use plugin `my-wp-content/mu-plugins/register-theme-directory.php` to load all the default themes inside of `wordpress/wp-content/themes` directory. If you do not want these to be listed under Themes menu inside Admin, then remove this plugin.
 
-## How is this compare to Bedrocks?
+## How is This Compare to Bedrocks?
 
 This project template is inspired by [Bedrock](https://roots.io/bedrock/), and in fact, we re-use
 one of theri mu-plugins named "register-theme-directory.php". However, we kept it very minimal, 
@@ -140,3 +140,43 @@ and we do not use/depends on "composer" to get dependencies. We simply take adva
 possible, and yet still having the advantage of separation of "wp-content" away from deployed 
 "wordpress" directory. We believe this is a good balance and bring efficient and quick way to 
 setup and start WordPress development.
+
+## How to Configure "lighttpd" Web Server
+
+The instructions above using "wp server" will start a PHP built-in web server only. If you prefer to use a real
+web server such as Apache HTTPD, Nginx or Lighttpd, then would need different setup. Setup production ready on web
+server is outside of this project scope, but you should be able to find these instruction easily on the web. Here, we
+would give you instruction on how to use Lighttpd, as it is the simplest to setup:
+
+1. Install "lighttpd" server and start it on port 80.
+2. Move or git clone this project into the DocumentRoot directory (eg: `/usr/local/var/www`).
+3. Edit the `wp-config.php` in this project and ensure you change the following:
+```
+define( 'WP_HOME', 'http://localhost/my-wordpress-starter' );
+define( 'WP_SITEURL', 'http://localhost/my-wordpress-starter/wordpress' );
+```
+4. Now, open browser to http://localhost/my-wordpress-starter/wordpress/wp-admin to use it.
+
+NOTE: All other instructions above still apply, such as you need to download WP, install DB and the application.
+
+Here is a quick "lighttpd" configuration setup to enable PHP:
+Edit config (eg: `/usr/local/etc/lighttpd/lighttpd.conf`)
+```
+server.port = 80
+#...
+server.modules += ( "mod_fastcgi" )
+fastcgi.server = (
+  ".php" => (
+    ( "socket" => "/tmp/php.socket",
+      "bin-path" => "/usr/local/opt/php/bin/php-cgi",
+      "bin-environment" => (
+        "PHP_FCGI_CHILDREN" => "16",
+        "PHP_FCGI_MAX_REQUESTS" => "10000"
+      ),
+      "min-procs" => 1,
+      "max-procs" => 1,
+      "idle-timeout" => 20
+    )
+  )
+)
+```
