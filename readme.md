@@ -147,3 +147,43 @@ and we do not use/depends on "composer" to get dependencies. We simply take adva
 possible, and yet still having the advantage of separation of "wp-content" away from deployed 
 "wordpress" directory. We believe this is a good balance and bring efficient and quick way to 
 setup and start WordPress development.
+
+## How to Configure "lighttpd" Web Server
+
+The instructions above using "wp server" will start a PHP built-in web server only. If you prefer to use a real
+web server such as Apache HTTPD, Nginx or Lighttpd, then would need different setup. Setup production ready on web
+server is outside of this project scope, but you should be able to find these instruction easily on the web. Here, we
+would give you instruction on how to use Lighttpd, as it is the simplest to setup:
+
+1. Install "lighttpd" server and start it on port 80.
+2. Move or git clone this project into the DocumentRoot directory (eg: `/usr/local/var/www`).
+3. Edit the `wp-config.php` in this project and ensure you change the following:
+```
+define( 'WP_HOME', 'http://localhost/my-wordpress-starter' );
+define( 'WP_SITEURL', 'http://localhost/my-wordpress-starter/wordpress' );
+```
+4. Now, open browser to http://localhost/my-wordpress-starter/wordpress/wp-admin to use it.
+
+NOTE: All other instructions above still apply, such as you need to download WP, install DB and the application.
+
+Here is a quick "lighttpd" configuration setup to enable PHP:
+Edit config (eg: `/usr/local/etc/lighttpd/lighttpd.conf`)
+```
+server.port = 80
+#...
+server.modules += ( "mod_fastcgi" )
+fastcgi.server = (
+  ".php" => (
+    ( "socket" => "/tmp/php.socket",
+      "bin-path" => "/usr/local/opt/php/bin/php-cgi",
+      "bin-environment" => (
+        "PHP_FCGI_CHILDREN" => "16",
+        "PHP_FCGI_MAX_REQUESTS" => "10000"
+      ),
+      "min-procs" => 1,
+      "max-procs" => 1,
+      "idle-timeout" => 20
+    )
+  )
+)
+```
