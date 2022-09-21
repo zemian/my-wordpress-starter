@@ -3,6 +3,12 @@
 A quick setup for WordPress development with "my-theme". This theme is setup 
 to use minimal structure, and it's ready with BulmaCSS and VueJS loaded from CDN ready.
 
+## Using "my-theme" Configuration
+
+* Create a "MainMenu" in WP Admin and set to menu location with same name "MainMenu". Ensure you save changes!
+* Create a "/home" static Page - this will automatically use the "page-home.php" template.
+* Create a "/contact" static Page - this will automatically use the "page-contact.php" plate and send form via email.
+
 ## Quick start
 
 ```
