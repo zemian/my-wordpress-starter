@@ -14,7 +14,7 @@ cp wp-config-local.php wp-config.php
 
 wp core download
 wp db create
-wp core install
+wp core install --prompt
 wp server
 open http://localhost:8080/wordpress/wp-admin/
 ```
@@ -26,7 +26,7 @@ This project setup is based on [my-wordpress-starter](https://github.com/zemian/
 This project starter template provides a streamlined WordPress (WP) structure setup for local
 development.
 
-Instead of writing directly into `wordpress` application folder, we let WP loads the 
+Instead of writing directly into `wordpress` application folder, we let WP loads the
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
 and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins and themes files instead.
 
@@ -74,14 +74,14 @@ cd <my-wordpress-starter>
 wp core download
 ```
 
-This will download and create the `wordpress` folder. This is the WP application, and we will not 
+This will download and create the `wordpress` folder. This is the WP application, and we will not
 add this into our Git repository. We will setup local dev web server document root at the project root, and set the `wordpress` as sub folder. (See `wp-cli.yml` configuration).
 
 3. Copy `<my-wordpress-starter>/wp-config-local.php` to `<my-wordpress-starter>/wp-config.php` and change the default if needed. (We recommend you to change the salt keys for each new environment as well!)
 
-NOTE: This `wp-config.php` file should be copied into `<my-wordpress-starter>` project directory 
-(not inside `wordpress`). We do not  want to touch the original `wordpress` core files. The WP will automatically 
-detect the `wp-config.php` file from parent directory and uses it. With this custom WP config, we have stream-lined the 
+NOTE: This `wp-config.php` file should be copied into `<my-wordpress-starter>` project directory
+(not inside `wordpress`). We do not  want to touch the original `wordpress` core files. The WP will automatically
+detect the `wp-config.php` file from parent directory and uses it. With this custom WP config, we have stream-lined the
 structure of WP. Instead of writing directly into `wordpress` application folder, we let WP loads the
 `<my-wordpress-starter>/config.php` on parent directory for configuration, and we have changed
 and use the `<my-wordpress-starter>/my-wp-content` folder for all the plugins and themes files instead.
@@ -97,7 +97,7 @@ wp core install --url=http://localhost:8080/wordpress --title=MyWP \
 
 NOTE: To re-run the installation, run `wp db clean` first and then `wp db install` again.
 
-NOTE: To remove all the sample pages from the site after install, run `wp site empty`. 
+NOTE: To remove all the sample pages from the site after install, run `wp site empty`.
 
 6. Run local WP web server
 
@@ -134,11 +134,11 @@ We have used a must-use plugin `my-wp-content/mu-plugins/register-theme-director
 ## How is This Compare to Bedrocks?
 
 This project template is inspired by [Bedrock](https://roots.io/bedrock/), and in fact, we re-use
-one of theri mu-plugins named "register-theme-directory.php". However, we kept it very minimal, 
+one of theri mu-plugins named "register-theme-directory.php". However, we kept it very minimal,
 and we do not use/depends on "composer" to get dependencies. We simply take advantage of the
-"wp-cli" command line tool. This allows us to stay close to WordPress structure as much as 
-possible, and yet still having the advantage of separation of "wp-content" away from deployed 
-"wordpress" directory. We believe this is a good balance and bring efficient and quick way to 
+"wp-cli" command line tool. This allows us to stay close to WordPress structure as much as
+possible, and yet still having the advantage of separation of "wp-content" away from deployed
+"wordpress" directory. We believe this is a good balance and bring efficient and quick way to
 setup and start WordPress development.
 
 ## How to Configure "lighttpd" Web Server
