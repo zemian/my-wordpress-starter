@@ -10,7 +10,7 @@ $form_data = $form['data'] ?? [];
 
 <?php get_header(); ?>
 
-<div class="section">
+<div class="section" style="min-height: 80vh;">
     <div class="columns">
         <div class="column is-8 is-offset-2">
             <div <?php post_class("contact-us-page"); ?>>
