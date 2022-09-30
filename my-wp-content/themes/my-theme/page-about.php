@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<div class="section">
+<div class="section" style="min-height: 80vh;">
     <div class="columns">
         <div class="column is-8 is-offset-2">
             <div class="content has-text-centered">
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="section has-background-white-ter">
+<div class="section has-background-white-ter" style="min-height: 80vh;">
     <div class="columns">
         <div class="column is-8 is-offset-2">
             <div class="content has-text-centered">
