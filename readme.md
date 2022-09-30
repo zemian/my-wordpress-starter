@@ -1,6 +1,6 @@
 # About This Project
 
-A quick setup for WordPress development with "my-theme". This theme is setup 
+A quick setup for WordPress development with "my-theme". This theme is setup
 to use minimal structure, and it's ready with BulmaCSS and VueJS loaded from CDN ready.
 
 ## Using "my-theme" Configuration
@@ -21,7 +21,7 @@ cp wp-config-local.php wp-config.php
 
 wp core download
 wp db create
-wp core install
+wp core install --prompt
 wp server
 open http://localhost:8080/wordpress/wp-admin/
 ```
