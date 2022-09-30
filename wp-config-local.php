@@ -84,6 +84,8 @@ define( 'WP_DEBUG', false );
 /* Add any custom values between this line and the "stop editing" line. */
 
 // == Explicit WP URL
+//define( 'WP_HOME', 'http://localhost/apps/my-wordpress-starter' );
+//define( 'WP_SITEURL', 'http://localhost/apps/my-wordpress-starter/wordpress' );
 define( 'WP_HOME', 'http://localhost:8080' );
 define( 'WP_SITEURL', 'http://localhost:8080/wordpress' );
 
