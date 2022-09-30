@@ -27,8 +27,8 @@
             </div>
             <div class="columns is-align-items-center">
                 <div class="column">
-                    <figure class="image is-3x2">
-                        <img src="https://bulma.io/images/placeholders/480x320.png">
+                    <figure class="image is-square">
+                        <img src="https://bulma.io/assets/Bulma%20Logo.svg">
                     </figure>
                     <div class="has-text-centered">
                         <h1 class="is-size-4">BulmaCSS</h1>
@@ -36,12 +36,21 @@
                     </div>
                 </div>
                 <div class="column">
-                    <figure class="image is-3x2">
-                        <img src="https://bulma.io/images/placeholders/480x320.png">
+                    <figure class="image is-square">
+                        <img src="https://raw.githubusercontent.com/vuejs/art/master/logo.svg">
                     </figure>
                     <div class="has-text-centered">
                         <h1 class="is-size-4">VueJS</h1>
                         <p><a href="https://vuejs.org/" class="button is-primary">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <figure class="image is-square">
+                        <img src="https://www.php.net/images/logos/new-php-logo.svg">
+                    </figure>
+                    <div class="has-text-centered">
+                        <h1 class="is-size-4">PHP</h1>
+                        <p><a href="https://php.net" class="button is-primary">Learn More</a></p>
                     </div>
                 </div>
             </div>

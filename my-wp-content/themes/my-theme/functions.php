@@ -10,7 +10,7 @@ function add_resources() {
     // Use CDN versions
     wp_enqueue_style('fontawesome', 'https://unpkg.com/@fortawesome/fontawesome-free@6.2.0/css/all.min.css');
     wp_enqueue_style('bulmacss', 'https://unpkg.com/bulma@0.9.4/css/bulma.min.css');
-    wp_enqueue_script('vuejs', 'https://unpkg.com/vue@3.2.39/dist/vue.global.js');
+    wp_enqueue_script('vuejs', 'https://unpkg.com/vue@3.2.39/dist/vue.global.prod.js');
 
     // Remove unused WP CSS
     wp_dequeue_style('global-styles');
