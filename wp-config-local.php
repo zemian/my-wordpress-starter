@@ -84,11 +84,14 @@ define( 'WP_DEBUG', false );
 /* Add any custom values between this line and the "stop editing" line. */
 
 // == Explicit WP URL
-// Tips: Ensure to re-save permalinks from Settings after url updates.
-//define( 'WP_HOME', 'http://localhost/apps/my-wordpress-starter' );
-//define( 'WP_SITEURL', 'http://localhost/apps/my-wordpress-starter/wordpress' );
+// This can be used with built-in php web server
 define( 'WP_HOME', 'http://localhost:8080' );
 define( 'WP_SITEURL', 'http://localhost:8080/wordpress' );
+
+// This can be used with Apache or Lighttpd web server where port set to 80
+// Tips: Ensure to re-save permalinks from Settings after url updates.
+//define( 'WP_HOME', 'http://localhost/my-wordpress-starter' );
+//define( 'WP_SITEURL', 'http://localhost/my-wordpress-starter/wordpress' );
 
 /* That's all, stop editing! Happy publishing. */
 
